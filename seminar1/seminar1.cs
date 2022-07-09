@@ -113,7 +113,7 @@
       8 -> 2, 4, 6, 8
       */
       Console.WriteLine("Запущено задание 8. Вывод четных чисел от 1 до N");
-      Console.Write("Введите число N: ");
+      Console.Write("Введите число N (больше чем 1): ");
       int n = Convert.ToInt32(Console.ReadLine());
 
       // Т.к. в задании указано "ДО N", то N не выводится.
