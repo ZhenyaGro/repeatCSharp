@@ -112,14 +112,21 @@
       5 -> 2, 4
       8 -> 2, 4, 6, 8
       */
-      Console.WriteLine("Запущено задание 8. Вывод четных чисел от 0 до N");
+      Console.WriteLine("Запущено задание 8. Вывод четных чисел от 1 до N");
       Console.Write("Введите число N: ");
       int n = Convert.ToInt32(Console.ReadLine());
 
       // Т.к. в задании указано "ДО N", то N не выводится.
-      for (int i = 0; i < n; i += 2)
+      if (n >= 2)
       {
-        Console.Write(i + " ");
+        for (int i = 2; i < n; i += 2)
+        {
+          Console.Write(i + " ");
+        }
+      }
+      else
+      {
+        Console.WriteLine("Некорректный ввод");
       }
     }
   }
