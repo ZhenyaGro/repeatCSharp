@@ -84,7 +84,14 @@
         return;
       }
 
-      Console.WriteLine("max = " + numbers.Max());
+      int max = numbers[0];
+      for (int i = 1; i < numbers.Length; i++)
+      {
+        if (numbers[i] > max)
+          max = numbers[i];
+      }
+
+      Console.WriteLine("max = " + max);
     }
 
     public static void task6()
@@ -100,10 +107,10 @@
       int number = Convert.ToInt32(Console.ReadLine());
       if (Convert.ToBoolean(number % 2))
       {
-        Console.WriteLine("Нет (число нечетное)");
+        Console.WriteLine("Нет, не является четным");
         return;
       }
-      Console.WriteLine("Да (число четное)");
+      Console.WriteLine("Да, является четным");
     }
     public static void task8()
     {
@@ -119,7 +126,7 @@
       // Т.к. в задании указано "ДО N", то N не выводится.
       if (n >= 2)
       {
-        for (int i = 2; i < n; i += 2)
+        for (int i = 2; i <= n; i += 2)
         {
           Console.Write(i + " ");
         }
