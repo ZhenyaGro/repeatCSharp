@@ -123,7 +123,6 @@
       Console.Write("Введите число N (больше чем 1): ");
       int n = Convert.ToInt32(Console.ReadLine());
 
-      // Т.к. в задании указано "ДО N", то N не выводится.
       if (n >= 2)
       {
         for (int i = 2; i <= n; i += 2)
