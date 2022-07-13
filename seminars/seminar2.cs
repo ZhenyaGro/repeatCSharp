@@ -41,21 +41,15 @@
       */
       Console.WriteLine("Запущено задание 10. Вывод второй цифры трехзначного числа");
       Console.Write("Введите трехзначное число: ");
-      string userAnswer = Console.ReadLine();
+      int userAnswer = Math.Abs(Convert.ToInt32(Console.ReadLine()));
 
-      if (userAnswer.Length != 3)
+      if (userAnswer <= 99 || userAnswer >= 1000)
       {
         Console.WriteLine("Некорректный ввод");
         return;
       }
 
-      int[] numbers = new int[3];
-      for (int i = 0; i < 3; i++)
-      {
-        numbers[i] = Convert.ToInt32(userAnswer.Split(""));
-      }
-
-      Console.WriteLine(numbers[2]);
+      Console.WriteLine(userAnswer / 10 % 10);
     }
     public static void task13()
     {
@@ -65,6 +59,18 @@
       78 -> третьей цифры нет
       32679 -> 6
       */
+      Console.WriteLine("Запущено задание 13. Вывод третьей цифры числа");
+      Console.Write("Введите число: ");
+      int userAnswer = Math.Abs(Convert.ToInt32(Console.ReadLine()));
+
+      if (userAnswer < 100)
+      {
+        Console.WriteLine("Некорректный ввод");
+        return;
+      }
+
+      while (userAnswer / 10 >= 100) userAnswer /= 10;
+      Console.WriteLine(userAnswer % 10);
     }
     public static void task15()
     {
@@ -74,6 +80,18 @@
       7 -> да
       1 -> нет
       */
+      Console.WriteLine("Запущено задание 15. Проверка выходного");
+      Console.Write("Введите день недели: ");
+      int userAnswer = Math.Abs(Convert.ToInt32(Console.ReadLine()));
+
+      if (userAnswer > 7 || userAnswer < 1)
+      {
+        Console.WriteLine("Некорректный ввод");
+        return;
+      }
+
+      if (userAnswer == 6 || userAnswer == 7) Console.WriteLine("Да");
+      else Console.WriteLine("Нет");
     }
   }
 }
