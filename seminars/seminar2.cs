@@ -80,7 +80,7 @@
       7 -> да
       1 -> нет
       */
-      Console.WriteLine("Запущено задание 15. Проверка выходного");
+      Console.WriteLine("Запущено задание 15. Проверка выходного дня");
       Console.Write("Введите день недели: ");
       int userAnswer = Math.Abs(Convert.ToInt32(Console.ReadLine()));
 
