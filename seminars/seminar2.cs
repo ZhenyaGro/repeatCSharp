@@ -65,7 +65,7 @@
 
       if (userAnswer < 100)
       {
-        Console.WriteLine("Некорректный ввод");
+        Console.WriteLine("Третьей цифры нет");
         return;
       }
 
