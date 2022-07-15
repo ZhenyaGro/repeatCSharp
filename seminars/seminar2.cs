@@ -61,7 +61,7 @@
       */
       Console.WriteLine("Запущено задание 13. Вывод третьей цифры числа");
       Console.Write("Введите число: ");
-      int userAnswer = Math.Abs(Convert.ToInt32(Console.ReadLine()));
+      int userAnswer = Convert.ToInt32(Console.ReadLine());
 
       if (userAnswer < 100)
       {
