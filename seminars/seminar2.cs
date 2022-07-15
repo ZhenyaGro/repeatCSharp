@@ -41,7 +41,7 @@
       */
       Console.WriteLine("Запущено задание 10. Вывод второй цифры трехзначного числа");
       Console.Write("Введите трехзначное число: ");
-      int userAnswer = Math.Abs(Convert.ToInt32(Console.ReadLine()));
+      int userAnswer = (Convert.ToInt32(Console.ReadLine());
 
       if (userAnswer <= 99 || userAnswer >= 1000)
       {
@@ -82,7 +82,7 @@
       */
       Console.WriteLine("Запущено задание 15. Проверка выходного дня");
       Console.Write("Введите день недели: ");
-      int userAnswer = Math.Abs(Convert.ToInt32(Console.ReadLine()));
+      int userAnswer = Convert.ToInt32(Console.ReadLine());
 
       if (userAnswer > 7 || userAnswer < 1)
       {
