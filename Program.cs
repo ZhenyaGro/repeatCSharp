@@ -3,19 +3,31 @@
 // Start the app and propose to choose the task
 static void selectLesson()
 {
-  Console.WriteLine("Доступны задания первого и второго семинаров.\nВведите номер семинара запускаемых заданий (цифрой 1 или 2)");
-  switch (Console.ReadLine())
+  // Available seminars
+  // int[] seminars = new int[3] { 1, 2, 3 };
+  List<BaseSeminar> seminars = new List<BaseSeminar>() {
+    new Seminar1(),
+    new Seminar2(),
+    new Seminar3()
+    };
+
+  // Choose the seminar
+  Console.WriteLine($"Введите номер семинара запускаемых заданий (доступно: 1 - {seminars.Count})");
+  int userAnswer = Convert.ToInt16(Console.ReadLine());
+
+  // Show seminar's available tasks
+  if (seminars.Count >= userAnswer && userAnswer > 0) launchTask(seminars[userAnswer - 1]);
+  else Console.WriteLine("Некорректный ввод");
+}
+
+static void launchTask(BaseSeminar seminar)
+{
+  Console.Write($"Выберите задание {seminar.genitiveSemNum} семинара (доступно: {string.Join(", ", seminar.tasks.Keys)}): ");
+  var method = seminar.tasks.GetValueOrDefault(Convert.ToInt16(Console.ReadLine()));
+  if (method != null)
   {
-    case "1":
-      Seminar1.TaskSelector.launchTask();
-      break;
-
-    case "2":
-      Seminar2.TaskSelector.launchTask();
-      break;
-
-    default:
-      Console.WriteLine("Некорректный ввод");
-      break;
+    Console.WriteLine();
+    method();
   }
+  else Console.WriteLine("Задания с таким номером нет.");
 }
