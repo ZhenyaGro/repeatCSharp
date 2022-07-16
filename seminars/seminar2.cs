@@ -58,7 +58,7 @@
     */
     Console.WriteLine("Запущено задание 15. Проверка выходного дня");
     Console.Write("Введите день недели: ");
-    int userAnswer = Math.Abs(Convert.ToInt32(Console.ReadLine()));
+    int userAnswer = Convert.ToInt32(Console.ReadLine());
 
     if (userAnswer > 7 || userAnswer < 1)
     {
