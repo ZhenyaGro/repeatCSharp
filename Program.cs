@@ -4,7 +4,6 @@
 static void selectLesson()
 {
   // Available seminars
-  // int[] seminars = new int[3] { 1, 2, 3 };
   List<BaseSeminar> seminars = new List<BaseSeminar>() {
     new Seminar1(),
     new Seminar2(),
@@ -23,11 +22,11 @@ static void selectLesson()
 static void launchTask(BaseSeminar seminar)
 {
   Console.Write($"Выберите задание {seminar.genitiveSemNum} семинара (доступно: {string.Join(", ", seminar.tasks.Keys)}): ");
-  var method = seminar.tasks.GetValueOrDefault(Convert.ToInt16(Console.ReadLine()));
-  if (method != null)
+  var task = seminar.tasks.GetValueOrDefault(Convert.ToInt16(Console.ReadLine()));
+  if (task != null)
   {
     Console.WriteLine();
-    method();
+    task();
   }
   else Console.WriteLine("Задания с таким номером нет.");
 }

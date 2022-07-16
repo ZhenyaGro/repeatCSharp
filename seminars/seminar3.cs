@@ -1,10 +1,10 @@
 class Seminar3 : BaseSeminar
 {
   // Info about the tasks
-  protected internal override Dictionary<int, method> tasks { get; } = new Dictionary<int, method>(){
-    {19, new method(task19)},
-    {21, new method(task21)},
-    {23, new method(task23)}
+  protected internal override Dictionary<int, task> tasks { get; } = new Dictionary<int, task>(){
+    {19, new task(task19)},
+    {21, new task(task21)},
+    {23, new task(task23)}
   };
   protected internal override string genitiveSemNum { get; } = "третьего";
 
