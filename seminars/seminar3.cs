@@ -21,7 +21,7 @@ class Seminar3 : BaseSeminar
     Console.WriteLine("Запущено задание 19. Число-палиндром");
 
     Console.Write("Введите пятизначное число: ");
-    int number = Math.Abs(Convert.ToInt16(Console.ReadLine()));
+    int number = Math.Abs(Convert.ToInt32(Console.ReadLine()));
 
     int oldValue = number;
     int newValue = 0;
