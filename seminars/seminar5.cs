@@ -68,23 +68,43 @@ class Seminar5 : BaseSeminar
 
     Console.WriteLine("Запущено задание 36. Сумма элементов на нечетных позициях (по индексу)");
 
-    int[] array = new int[4];
-    Random rnd = new Random();
-    int sum = 0;
+    int[] numbers = CreateArray();
+    int sum = CountSum(numbers);
+    ShowResult(numbers, sum);
 
-    Console.Write("[");
-    for (int i = 0; i < array.Length; i++)
+    int[] CreateArray()
     {
-      array[i] = rnd.Next(-100, 101);
-      Console.Write($"{array[i]}");
-      if (i != array.Length - 1)
-        Console.Write(", ");
+      int[] array = new int[4];
+      Random rnd = new Random();
+
+      for (int i = 0; i < array.Length; i++)
+      {
+        array[i] = rnd.Next(-100, 101);
+      }
+
+      return array;
     }
 
-    for (int i = 1; i < array.Length; i += 2)
-      sum += array[i];
+    int CountSum(int[] array)
+    {
+      int sum = 0;
+      for (int i = 1; i < array.Length; i += 2)
+        sum += array[i];
 
-    Console.Write($"] -> {sum}");
+      return sum;
+    }
+
+    void ShowResult(int[] array, int sum)
+    {
+      Console.Write("[");
+      for (int i = 0; i < array.Length; i++)
+      {
+        Console.Write($"{array[i]}");
+        if (i != array.Length - 1)
+          Console.Write(", ");
+      }
+      Console.Write($"] -> {sum}");
+    }
   }
   public static void Task38()
   {
