@@ -66,10 +66,14 @@ class Seminar4 : BaseSeminar
 
     int[] array = new int[8];
     Random rnd = new Random();
+    Console.Write("[");
     for (int i = 0; i < 8; i++)
     {
       array[i] = rnd.Next(0, 101);
-      Console.Write($"{array[i]} ");
+      Console.Write($"{array[i]}");
+      if (i != array.Length - 1)
+        Console.Write(", ");
     }
+    Console.WriteLine("]");
   }
 }
