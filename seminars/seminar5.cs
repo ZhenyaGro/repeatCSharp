@@ -1,15 +1,15 @@
 class Seminar5 : BaseSeminar
 {
   // Info about the tasks
-  protected internal override Dictionary<int, task> tasks { get; } = new Dictionary<int, task>(){
-    {34, new task(task34)},
-    {36, new task(task36)},
-    {38, new task(task38)}
+  protected internal override Dictionary<int, Task> tasks { get; } = new Dictionary<int, Task>(){
+    {34, new Task(Task34)},
+    {36, new Task(Task36)},
+    {38, new Task(Task38)}
   };
   protected internal override string genitiveSemNum { get; } = "пятого";
 
   // Tasks
-  public static void task34()
+  public static void Task34()
   {
     /*
     Задача 34: Задайте массив заполненный случайными положительными трёхзначными числами. Напишите программу, которая покажет количество чётных чисел в массиве.
@@ -34,7 +34,7 @@ class Seminar5 : BaseSeminar
     }
     Console.WriteLine($"] -> {countEven}");
   }
-  public static void task36()
+  public static void Task36()
   {
     /*
     Задача 36: Задайте одномерный массив, заполненный случайными числами. Найдите сумму элементов, стоящих на нечётных позициях.
@@ -62,7 +62,7 @@ class Seminar5 : BaseSeminar
 
     Console.Write($"] -> {sum}");
   }
-  public static void task38()
+  public static void Task38()
   {
     /*
     Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.

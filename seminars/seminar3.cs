@@ -1,15 +1,15 @@
 class Seminar3 : BaseSeminar
 {
   // Info about the tasks
-  protected internal override Dictionary<int, task> tasks { get; } = new Dictionary<int, task>(){
-    {19, new task(task19)},
-    {21, new task(task21)},
-    {23, new task(task23)}
+  protected internal override Dictionary<int, Task> tasks { get; } = new Dictionary<int, Task>(){
+    {19, new Task(Task19)},
+    {21, new Task(Task21)},
+    {23, new Task(Task23)}
   };
   protected internal override string genitiveSemNum { get; } = "третьего";
 
   // Tasks
-  public static void task19()
+  public static void Task19()
   {
     /*
     Задача 19
@@ -34,7 +34,7 @@ class Seminar3 : BaseSeminar
     if (newValue == oldValue) Console.WriteLine("Да");
     else Console.WriteLine("Нет");
   }
-  public static void task21()
+  public static void Task21()
   {
     /*
     Задача 21
@@ -73,7 +73,7 @@ class Seminar3 : BaseSeminar
 
     Console.WriteLine(Math.Round(distance, 2));
   }
-  public static void task23()
+  public static void Task23()
   {
     /*
     Задача 23

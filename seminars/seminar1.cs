@@ -1,15 +1,15 @@
 ﻿class Seminar1 : BaseSeminar
 {
   // Info about the tasks
-  protected internal override Dictionary<int, task> tasks { get; } = new Dictionary<int, task>(){
-    {2, new task(task2)},
-    {4, new task(task4)},
-    {6, new task(task6)},
-    {8, new task(task8)}
+  protected internal override Dictionary<int, Task> tasks { get; } = new Dictionary<int, Task>(){
+    {2, new Task(Task2)},
+    {4, new Task(Task4)},
+    {6, new Task(Task6)},
+    {8, new Task(Task8)}
   };
   protected internal override string genitiveSemNum { get; } = "первого";
 
-  public static void task2()
+  public static void Task2()
   {
     /*
   Задача 2: Напишите программу, которая на вход принимает два числа и выдаёт, какое число большее, а какое меньшее.
@@ -32,7 +32,7 @@
       Console.WriteLine("Числа равны.");
   }
 
-  public static void task4()
+  public static void Task4()
   {
     /*
   Задача 4: Напишите программу, которая принимает на вход три числа и выдаёт максимальное из этих чисел.
@@ -67,7 +67,7 @@
     Console.WriteLine("max = " + max);
   }
 
-  public static void task6()
+  public static void Task6()
   {
     /*
     Задача 6: Напишите программу, которая на вход принимает число и выдаёт, является ли число чётным (делится ли оно на два без остатка).
@@ -85,7 +85,7 @@
     }
     Console.WriteLine("Да, является четным");
   }
-  public static void task8()
+  public static void Task8()
   {
     /*
     Задача 8: Напишите программу, которая на вход принимает число (N), а на выходе показывает все чётные числа от 1 до N.

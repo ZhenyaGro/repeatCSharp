@@ -1,15 +1,15 @@
 class Seminar4 : BaseSeminar
 {
   // Info about the tasks
-  protected internal override Dictionary<int, task> tasks { get; } = new Dictionary<int, task>(){
-    {25, new task(task25)},
-    {27, new task(task27)},
-    {29, new task(task29)}
+  protected internal override Dictionary<int, Task> tasks { get; } = new Dictionary<int, Task>(){
+    {25, new Task(Task25)},
+    {27, new Task(Task27)},
+    {29, new Task(Task29)}
   };
   protected internal override string genitiveSemNum { get; } = "четвертого";
 
   // Tasks
-  public static void task25()
+  public static void Task25()
   {
     /*
     Задача 25: Напишите цикл, который принимает на вход два числа (A и B) и возводит число A в натуральную степень B.
@@ -31,7 +31,7 @@ class Seminar4 : BaseSeminar
 
     Console.WriteLine(result);
   }
-  public static void task27()
+  public static void Task27()
   {
     /*
     Задача 27: Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
@@ -55,7 +55,7 @@ class Seminar4 : BaseSeminar
 
     Console.WriteLine(sum);
   }
-  public static void task29()
+  public static void Task29()
   {
     /*
     Задача 29: Напишите программу, которая задаёт массив из 8 элементов, заполненный

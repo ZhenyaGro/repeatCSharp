@@ -1,13 +1,13 @@
 ﻿class Seminar2 : BaseSeminar
 {
   // Info about the tasks
-  protected internal override Dictionary<int, task> tasks { get; } = new Dictionary<int, task>(){
-    {10, new task(task10)},
-    {13, new task(task13)},
-    {15, new task(task15)}
+  protected internal override Dictionary<int, Task> tasks { get; } = new Dictionary<int, Task>(){
+    {10, new Task(Task10)},
+    {13, new Task(Task13)},
+    {15, new Task(Task15)}
   };
   protected internal override string genitiveSemNum { get; } = "второго";
-  public static void task10()
+  public static void Task10()
   {
     /*
     Задача 10: Напишите программу, которая принимает на вход трёхзначное число и на выходе показывает вторую цифру этого числа.
@@ -27,7 +27,7 @@
 
     Console.WriteLine(userAnswer / 10 % 10);
   }
-  public static void task13()
+  public static void Task13()
   {
     /*
     Задача 13: Напишите программу, которая выводит третью цифру заданного числа или сообщает, что третьей цифры нет.
@@ -48,7 +48,7 @@
     while (userAnswer / 10 >= 100) userAnswer /= 10;
     Console.WriteLine(userAnswer % 10);
   }
-  public static void task15()
+  public static void Task15()
   {
     /*
     Задача 15: Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет, является ли этот день выходным.

@@ -1,7 +1,7 @@
 class BaseSeminar
 {
-  protected internal delegate void task();
-  protected internal virtual Dictionary<int, task> tasks { get; } = new Dictionary<int, task>() { };
+  protected internal delegate void Task();
+  protected internal virtual Dictionary<int, Task> tasks { get; } = new Dictionary<int, Task>() { };
 
   protected internal virtual string genitiveSemNum { get; } = "";
 }
