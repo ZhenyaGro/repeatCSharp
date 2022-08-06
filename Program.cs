@@ -14,7 +14,16 @@ static void selectLesson()
 
   // Choose the seminar
   Console.WriteLine($"Введите номер семинара запускаемых заданий (доступно: 1 - {seminars.Count})");
-  int userAnswer = Convert.ToInt16(Console.ReadLine());
+  int userAnswer;
+  try
+  {
+    userAnswer = Convert.ToInt16(Console.ReadLine());
+  }
+  catch (Exception)
+  {
+    Console.WriteLine("Некорректный ввод");
+    return;
+  }
 
   // Show seminar's available tasks
   if (seminars.Count >= userAnswer && userAnswer > 0) launchTask(seminars[userAnswer - 1]);
