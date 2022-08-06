@@ -17,22 +17,9 @@ class Seminar5 : BaseSeminar
     */
     Console.WriteLine("Запущено задание 34. Четные числа в массиве случайных");
 
-    int[] numbers = CreateArray();
+    int[] numbers = CreateArray2_0(34);
     int numberOfEven = CountEven(numbers);
-    ShowResult(numbers, numberOfEven);
-
-    int[] CreateArray()
-    {
-      int[] array = new int[4];
-      Random rnd = new Random();
-
-      for (int i = 0; i < array.Length; i++)
-      {
-        array[i] = rnd.Next(100, 1000);
-      }
-
-      return array;
-    }
+    ShowResult2_0(numbers, numberOfEven);
 
     int CountEven(int[] array)
     {
@@ -45,18 +32,6 @@ class Seminar5 : BaseSeminar
 
       return counter;
     }
-
-    void ShowResult(int[] array, int numEven)
-    {
-      Console.Write("[");
-      for (int i = 0; i < array.Length; i++)
-      {
-        Console.Write($"{array[i]}");
-        if (i != array.Length - 1)
-          Console.Write(", ");
-      }
-      Console.WriteLine($"] -> {numEven}");
-    }
   }
   public static void Task36()
   {
@@ -68,22 +43,9 @@ class Seminar5 : BaseSeminar
 
     Console.WriteLine("Запущено задание 36. Сумма элементов на нечетных позициях (по индексу)");
 
-    int[] numbers = CreateArray();
+    int[] numbers = CreateArray2_0(36);
     int sum = CountSum(numbers);
-    ShowResult(numbers, sum);
-
-    int[] CreateArray()
-    {
-      int[] array = new int[4];
-      Random rnd = new Random();
-
-      for (int i = 0; i < array.Length; i++)
-      {
-        array[i] = rnd.Next(-100, 101);
-      }
-
-      return array;
-    }
+    ShowResult2_0(numbers, sum);
 
     int CountSum(int[] array)
     {
@@ -92,18 +54,6 @@ class Seminar5 : BaseSeminar
         sum += array[i];
 
       return sum;
-    }
-
-    void ShowResult(int[] array, int sum)
-    {
-      Console.Write("[");
-      for (int i = 0; i < array.Length; i++)
-      {
-        Console.Write($"{array[i]}");
-        if (i != array.Length - 1)
-          Console.Write(", ");
-      }
-      Console.Write($"] -> {sum}");
     }
   }
   public static void Task38()
@@ -156,5 +106,51 @@ class Seminar5 : BaseSeminar
       }
       Console.WriteLine($"] -> {Math.Round(difference, 2)}");
     }
+  }
+
+  static int[] CreateArray2_0(int startedTask)
+  {
+    Console.Write("Введите длину массива: ");
+    int arrLength = Convert.ToInt32(Console.ReadLine());
+
+    int[] array = new int[arrLength];
+    Random rnd = new Random();
+
+    if (startedTask == 34)
+    {
+      for (int i = 0; i < array.Length; i++)
+      {
+        array[i] = rnd.Next(100, 1000);
+      }
+    }
+
+    if (startedTask == 36)
+    {
+      Console.WriteLine("Генерация случайных чисел");
+      Console.Write("От: ");
+      int rndMin = Convert.ToInt32(Console.ReadLine());
+      Console.Write("До: ");
+      int rndMax = Convert.ToInt32(Console.ReadLine());
+      Console.WriteLine();
+
+      for (int i = 0; i < array.Length; i++)
+      {
+        array[i] = rnd.Next(rndMin, rndMax);
+      }
+    }
+
+    return array;
+  }
+
+  static void ShowResult2_0(int[] array, int result)
+  {
+    Console.Write("[");
+    for (int i = 0; i < array.Length; i++)
+    {
+      Console.Write($"{array[i]}");
+      if (i != array.Length - 1)
+        Console.Write(", ");
+    }
+    Console.WriteLine($"] -> {result}");
   }
 }
