@@ -17,22 +17,46 @@ class Seminar5 : BaseSeminar
     */
     Console.WriteLine("Запущено задание 34. Четные числа в массиве случайных");
 
-    int[] array = new int[4];
-    Random rnd = new Random();
-    int countEven = 0;
+    int[] numbers = CreateArray();
+    int numberOfEven = CountEven(numbers);
+    ShowResult(numbers, numberOfEven);
 
-    Console.Write("[");
-    for (int i = 0; i < array.Length; i++)
+    int[] CreateArray()
     {
-      array[i] = rnd.Next(100, 1000);
-      Console.Write($"{array[i]}");
-      if (i != array.Length - 1)
-        Console.Write(", ");
+      int[] array = new int[4];
+      Random rnd = new Random();
 
-      if (array[i] % 2 == 0)
-        countEven++;
+      for (int i = 0; i < array.Length; i++)
+      {
+        array[i] = rnd.Next(100, 1000);
+      }
+
+      return array;
     }
-    Console.WriteLine($"] -> {countEven}");
+
+    int CountEven(int[] array)
+    {
+      int counter = 0;
+      for (int i = 0; i < array.Length; i++)
+      {
+        if (array[i] % 2 == 0)
+          counter++;
+      }
+
+      return counter;
+    }
+
+    void ShowResult(int[] array, int numEven)
+    {
+      Console.Write("[");
+      for (int i = 0; i < array.Length; i++)
+      {
+        Console.Write($"{array[i]}");
+        if (i != array.Length - 1)
+          Console.Write(", ");
+      }
+      Console.WriteLine($"] -> {numEven}");
+    }
   }
   public static void Task36()
   {
