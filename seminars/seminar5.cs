@@ -98,6 +98,7 @@ class Seminar5 : BaseSeminar
 
     void ShowResult(double[] array, double difference)
     {
+      Console.Write("[");
       for (int i = 0; i < array.Length; i++)
       {
         Console.Write($"{Math.Round(array[i], 2)}");
