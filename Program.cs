@@ -7,7 +7,8 @@ static void selectLesson()
   List<BaseSeminar> seminars = new List<BaseSeminar>() {
     new Seminar1(),
     new Seminar2(),
-    new Seminar3()
+    new Seminar3(),
+    new Seminar4()
     };
 
   // Choose the seminar
