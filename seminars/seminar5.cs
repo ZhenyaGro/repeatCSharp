@@ -70,31 +70,47 @@ class Seminar5 : BaseSeminar
     */
     Console.WriteLine("Запущено задание 38. Разница вещественных чисел");
 
-    double[] array = new double[4];
-    Random rnd = new Random();
-    double difference = 0;
+    // Executing
+    double[] array = CreateArray();
+    double difference = FindDifference(array);
+    ShowResult(array, difference);
 
-    Console.Write("[");
-    for (int i = 0; i < array.Length; i++)
+    // Methods
+    double[] CreateArray()
     {
-      array[i] = rnd.NextDouble() * 101;
-      Console.Write($"{Math.Round(array[i], 2)}");
-      if (i != array.Length - 1)
-        Console.Write(", ");
+      double[] array = new double[4];
+      for (int i = 0; i < array.Length; i++)
+      {
+        Random rnd = new Random();
+        array[i] = rnd.NextDouble() * 101;
+      }
+
+      return array;
     }
 
-    double min = array[0];
-    double max = array[0];
-    double temp;
-
-    for (int i = 0; i < array.Length; i++)
+    double FindDifference(double[] array)
     {
-      if (max < array[i]) max = array[i];
-      if (min > array[i]) min = array[i];
+      double min = array[0];
+      double max = array[0];
+
+      for (int i = 0; i < array.Length; i++)
+      {
+        if (max < array[i]) max = array[i];
+        if (min > array[i]) min = array[i];
+      }
+
+      return max - min;
     }
 
-    difference = max - min;
-
-    Console.WriteLine($"] -> {Math.Round(difference, 2)}");
+    void ShowResult(double[] array, double difference)
+    {
+      for (int i = 0; i < array.Length; i++)
+      {
+        Console.Write($"{Math.Round(array[i], 2)}");
+        if (i != array.Length - 1)
+          Console.Write(", ");
+      }
+      Console.WriteLine($"] -> {Math.Round(difference, 2)}");
+    }
   }
 }
