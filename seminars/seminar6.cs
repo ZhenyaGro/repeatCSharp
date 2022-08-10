@@ -17,30 +17,53 @@ class Seminar6 : BaseSeminar
     */
     Console.WriteLine("Запущено задание 41. Числа больше нуля");
 
-    Console.Write("Введите количество чисел: ");
-    int count = Convert.ToInt16(Console.ReadLine());
+    int[] numbers = CreateArray();
+    int count = CountNumbers(numbers);
+    ShowResult(numbers, count);
 
-    EnterCountNumbers(count);
-    // ShowResult();
-
-    int EnterCountNumbers(int count)
+    int[] CreateArray()
     {
-      int[] numbers = new int[count];
-      int result = 0;
+      Console.WriteLine("Введите числа массива через пробел:");
 
-      for (int i = 0; i < count; i++)
+      // string separator = ", ";
+
+      string[] userAnswer = Console.ReadLine().Split(" ");
+      int[] numbers = new int[userAnswer.Length];
+
+      try
       {
-        Console.Write($"Число {i + 1}: ");
-        numbers[i] = Convert.ToInt32(Console.ReadLine());
-        if (numbers[i] > 0) result++;
+        for (int i = 0; i < userAnswer.Length; i++)
+          numbers[i] = Convert.ToInt32(userAnswer[i]);
+      }
+      catch
+      {
+        Console.WriteLine("Некорректный ввод");
+        return null;
       }
 
-      return result;
+      return numbers;
     }
 
-    static void ShowResult()
+    int CountNumbers(int[] array)
     {
+      int count = 0;
 
+      foreach (int number in array)
+        if (number > 0) count++;
+
+      return count;
+    }
+
+    static void ShowResult(int[] array, int result)
+    {
+      Console.Write("[");
+      for (int i = 0; i < array.Length; i++)
+      {
+        Console.Write($"{array[i]}");
+        if (i != array.Length - 1)
+          Console.Write(", ");
+      }
+      Console.WriteLine($"] -> {result}");
     }
   }
   public static void Task43()
