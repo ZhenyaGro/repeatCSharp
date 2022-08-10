@@ -9,7 +9,8 @@ static void selectLesson()
     new Seminar2(),
     new Seminar3(),
     new Seminar4(),
-    new Seminar5()
+    new Seminar5(),
+    new Seminar6()
     };
 
   // Choose the seminar
