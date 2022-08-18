@@ -112,18 +112,7 @@ class Seminar7 : BaseSeminar
     int[,] numbers = createArray2Dimensional();
     ShowArray(numbers);
     Console.WriteLine();
-
-    double[] results = new double[numbers.GetLength(1)];
-
-    for (int i = 0; i < numbers.GetLength(1); i++)
-    {
-      int currentSum = 0;
-      for (int j = 0; j < numbers.GetLength(0); j++)
-      {
-        currentSum += numbers[j, i];
-      }
-      results[i] = Math.Round(currentSum / Convert.ToDouble(numbers.GetLength(0)), 1);
-    }
+    double[] results = CalculateArithmeticMean(numbers);
 
     Console.Write("Среднее арифметическое каждого столбца: ");
     for (int i = 0; i < results.Length; i++)
@@ -134,6 +123,23 @@ class Seminar7 : BaseSeminar
         return;
       }
       Console.Write(results[i] + "; ");
+    }
+
+    double[] CalculateArithmeticMean(int[,] arrayNumbers)
+    {
+      double[] results = new double[numbers.GetLength(1)];
+
+      for (int i = 0; i < numbers.GetLength(1); i++)
+      {
+        int currentSum = 0;
+        for (int j = 0; j < numbers.GetLength(0); j++)
+        {
+          currentSum += numbers[j, i];
+        }
+        results[i] = Math.Round(currentSum / Convert.ToDouble(numbers.GetLength(0)), 1);
+      }
+
+      return results;
     }
   }
 
