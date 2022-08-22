@@ -96,7 +96,7 @@ class Seminar8 : BaseSeminar
     int[,] numbers = createArray2Dimensional();
     ShowArray2Dimensional(numbers);
     Console.WriteLine();
-    Console.WriteLine($"{SearchMinSum(numbers)} строка?");
+    Console.WriteLine($"{SearchMinSum(numbers)} строка");
 
 
     static int[,] createArray2Dimensional()
