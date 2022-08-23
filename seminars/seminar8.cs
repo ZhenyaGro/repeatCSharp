@@ -322,6 +322,29 @@ class Seminar8 : BaseSeminar
     10 9 8 7
     */
     Console.WriteLine("Запущено задание 62. Спиральное заполнение");
+    Console.WriteLine();
+
+    int[,] sqareMatrix = new int[4, 4];
+
+    int currentNumber = 1;
+    int i = 0;
+    int j = 0;
+
+    while (currentNumber <= sqareMatrix.GetLength(0) * sqareMatrix.GetLength(1))
+    {
+      sqareMatrix[i, j] = currentNumber;
+      currentNumber++;
+      if (i <= j + 1 && i + j < sqareMatrix.GetLength(1) - 1)
+        j++;
+      else if (i < j && i + j >= sqareMatrix.GetLength(0) - 1)
+        i++;
+      else if (i >= j && i + j > sqareMatrix.GetLength(1) - 1)
+        j--;
+      else
+        i--;
+    }
+
+    ShowArray2D(sqareMatrix);
   }
   static void ShowArray2D(int[,] array)
   {
